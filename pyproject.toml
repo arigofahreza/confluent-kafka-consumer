@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "confluent-kafka-consumer"
+version = "0.1.0"
+description = ""
+authors = ["Arigo.Fahreza <arigo@jkt1.ebdesk.com>"]
+readme = "README.md"
+packages = [{include = "confluent_kafka_consumer"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^2.2.0"
+confluent-kafka = "^2.2.0"
+pandas = "^2.0.3"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
