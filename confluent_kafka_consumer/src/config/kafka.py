@@ -13,14 +13,14 @@ class KafkaConfig(BaseSettings):
         env_file = ".env"
 
 
-def producer() -> Consumer:
+def consumer() -> Consumer:
     kafka_config = KafkaConfig()
-    consumer = Consumer(
+    consumer_client = Consumer(
         {
             "bootstrap.servers": kafka_config.KAFKA_BOOTSTRAP,
             "group.id": kafka_config.KAFKA_GROUP_ID,
             "auto.offset.reset": kafka_config.KAFKA_AUTO_OFFSET_RESET
         }
     )
-    consumer.subscribe([kafka_config.KAFKA_TOPIC])
-    return consumer
+    consumer_client.subscribe([kafka_config.KAFKA_TOPIC])
+    return consumer_client
